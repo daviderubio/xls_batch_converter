@@ -16,7 +16,23 @@ A Python script to process and merge experimental signal recordings from Excel f
 
 ## 🧪 How-to / Steps
 
-    Prepare Your Files
+Start your environment 
+    
+    source environment_name/bin/activate
+        
+    if no environment is created, make one with 
+
+        python -m venv /path-to-environments-folder/environment_name
+
+Go to folder where your projects are stored
+
+    cd path/to/your-repo
+
+Git clone the XLS Batch Converter repo locally
+
+    git clone https://github.com/daviderubio/xls_batch_converter.git
+
+Prepare Your Files
 
         Place all Excel .xlsx files inside the data/raw/ folder.
 
@@ -26,11 +42,13 @@ A Python script to process and merge experimental signal recordings from Excel f
 
             A sheet called Processed
 
-    Start the environment, run the Script
+Run the Script
 
-python xlsx_batch_converter_ordered.py
-or
-python3 xlsx_batch_converter_ordered.py
+        python xlsx_batch_converter_ordered.py
+        
+        or
+        
+        python3 xlsx_batch_converter_ordered.py
 
 Check the Output
 
@@ -40,29 +58,36 @@ Check the Output
 
 ## 📦 requirements.txt
 
-pandas>=1.0.0
-openpyxl>=3.0.0
+    pandas>=1.0.0
+    openpyxl>=3.0.0
+    numpy>=1.18.0
+    scipy>=1.4.0
+    jupyter
 
 This ensures compatibility with reading .xlsx files and DataFrame manipulation.
 
 If you're using a virtual environment, you can install the dependencies with:
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
+
+## 🧰 Main Script
+
+    xlsx_batch_converter_ordered.py
 
 ## 🧰 Secondary Scripts
 
-rename_rois.py
+    rename_rois.py
 
-    Purpose: Processes a single Excel file to rename the "Processed" sheet columns using the metadata and export it as a CSV (i.e. renames headers)
+Purpose: Processes a single Excel file to rename the "Processed" sheet columns using the metadata and export it as a CSV (i.e. renames headers)
 
-folder_rename_rois.py 
+    folder_rename_rois.py 
 
-    Purpose: Processes multiple Excel file to rename the "Processed" sheet columns using the metadata and export it as a CSV (i.e. renames headers)
+Purpose: Processes multiple Excel file to rename the "Processed" sheet columns using the metadata and export it as a CSV (i.e. renames headers)
 
-xlsx_batch_converter.py
+    xlsx_batch_converter.py
 
-    Purpose: renames headers, merges multiple CSVs
+Purpose: renames headers, merges multiple CSVs
 
-xlsx_batch_converter_ordered.py // main script
+    xlsx_batch_converter_ordered.py // main script
 
-    Purpose: renames headers, merges multiple CSVs and orders columns by pre and post.
+Purpose: renames headers, merges multiple CSVs and orders columns by pre and post.
